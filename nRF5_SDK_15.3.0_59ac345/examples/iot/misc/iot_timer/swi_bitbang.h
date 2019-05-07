@@ -32,7 +32,7 @@
 #include <nrf_delay.h>
 
 
-#define MAX_SWI_BUSES   36      //!< SAMD21 xplainned pro has 36 free GPIO pins available
+#define MAX_SWI_BUSES   31      //!< SAMD21 xplainned pro has 36 free GPIO pins available
 
 
 typedef struct
@@ -52,21 +52,21 @@ extern SWIBuses swi_buses_default;
 //! delay macro for width of one pulse (start pulse or zero pulse)
 //! should be 4.34 us, is 4.05 us
 
-#define BIT_DELAY_1L        delay_us(3)
+#define BIT_DELAY_1L        nrf_delay_us(3)
 //! should be 4.34 us, is 4.05us
-#define BIT_DELAY_1H        delay_us(3)
+#define BIT_DELAY_1H        nrf_delay_us(3)
 
 //! time to keep pin high for five pulses plus stop bit (used to bit-bang CryptoAuth 'zero' bit)
 //! should be 26.04 us, is 26.92 us
-#define BIT_DELAY_5        delay_us(26)    // considering pin set delay
+#define BIT_DELAY_5        nrf_delay_us(26)    // considering pin set delay
 
 //! time to keep pin high for seven bits plus stop bit (used to bit-bang CryptoAuth 'one' bit)
 //! should be 34.72 us, is 35.13 us
-#define BIT_DELAY_7        delay_us(34)    // considering pin set delay
+#define BIT_DELAY_7        nrf_delay_us(34)    // considering pin set delay
 
 //! turn around time when switching from receive to transmit
 //! should be 93 us (Setting little less value as there would be other process before these steps)
-#define RX_TX_DELAY         delay_us(65)
+#define RX_TX_DELAY         nrf_delay_us(65)
 
 
 //! Lets set the timeout value for start pulse detection to the uint8_t maximum.

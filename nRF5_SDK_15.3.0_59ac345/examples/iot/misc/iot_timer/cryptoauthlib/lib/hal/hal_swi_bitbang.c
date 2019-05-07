@@ -30,7 +30,9 @@
 #include <stdio.h>
 #include "atca_hal.h"
 #include "hal_swi_bitbang.h"
+#include "swi_bitbang.h"
 #include "atca_device.h"
+
 
 /**
  * \defgroup hal_ Hardware abstraction layer (hal_)
@@ -98,7 +100,7 @@ ATCA_STATUS hal_swi_init(void *hal, ATCAIfaceCfg *cfg)
         // Bus isn't being used, enable it
 
         //! assign GPIO pin
-        data->pin_sda = swi_buses_default.pin_sda[cfg->atcaswi.bus];
+        data->pin_sda = 4;//OWI_PIN;//swi_buses_default.pin_sda[cfg->atcaswi.bus];
         swi_set_pin(data->pin_sda);
         swi_enable();
 
@@ -179,7 +181,7 @@ ATCA_STATUS hal_swi_receive(ATCAIface iface, uint8_t *rxdata, uint16_t *rxlength
     }
 
     //! Set SWI pin
-    swi_set_pin(swi_hal_data[bus].pin_sda);
+    swi_set_pin(4);
 
     while (retries-- > 0 && status != ATCA_SUCCESS)
     {
@@ -213,7 +215,7 @@ ATCA_STATUS hal_swi_wake(ATCAIface iface)
     uint16_t rxlength  = sizeof(data);
 
     //! Set SWI pin
-    swi_set_pin(swi_hal_data[bus].pin_sda);
+    swi_set_pin(4);//swi_hal_data[bus].pin_sda);
     //! Generate Wake Token
     swi_send_wake_token();
 
@@ -242,7 +244,7 @@ ATCA_STATUS hal_swi_idle(ATCAIface iface)
     int bus     = cfg->atcaswi.bus;
 
     //! Set SWI pin
-    swi_set_pin(swi_hal_data[bus].pin_sda);
+    swi_set_pin(4);
     swi_send_byte(SWI_FLAG_IDLE);
 
     return ATCA_SUCCESS;
@@ -261,7 +263,7 @@ ATCA_STATUS hal_swi_sleep(ATCAIface iface)
     int bus     = cfg->atcaswi.bus;
 
     //! Set SWI pin
-    swi_set_pin(swi_hal_data[bus].pin_sda);
+    swi_set_pin(4);
     swi_send_byte(SWI_FLAG_SLEEP);
 
     return ATCA_SUCCESS;
@@ -283,7 +285,7 @@ ATCA_STATUS hal_swi_release(void *hal_data)
     //! if the use count for this bus has gone to 0 references, disable it.  protect against an unbracketed release
     if (hal && --(hal->ref_ct) <= 0)
     {
-        swi_set_pin(swi_hal_data[hal->bus_index].pin_sda);
+        swi_set_pin(4);
         swi_disable();
         hal->ref_ct = 0;
     }

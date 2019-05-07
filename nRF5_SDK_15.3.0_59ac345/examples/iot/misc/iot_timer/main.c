@@ -102,10 +102,17 @@ APP_TIMER_DEF(m_iot_timer_tick_src_id);                                         
 
 static void init_cryptolib()
 {
-        ATCA_STATUS status;
-            uint8_t sn[ATCA_SERIAL_NUM_SIZE];
-    NRF_LOG_INFO( "test");
-    if ((status = atcab_read_serial_number(sn)) != ATCA_SUCCESS)
+    ATCA_STATUS status;
+    uint8_t sn[ATCA_SERIAL_NUM_SIZE];
+        
+    ATCAIfaceCfg cfg;
+    cfg.atcaswi.bus = 4;
+    cfg.iface_type = ATCA_SWI_IFACE;
+    cfg.devtype = ATECC608A;
+    atcab_init(&cfg);
+    
+    status = atcab_read_serial_number(sn);
+    if ((status) != ATCA_SUCCESS)
     {
        NRF_LOG_INFO( "read serial nr failed");
     }
@@ -234,30 +241,30 @@ int main(void)
 
     //Initialize.
     log_init();
-    leds_init();
-    low_freq_clock_start();
-    timers_init();
-
-    static const iot_timer_client_t list_of_clients[] =
-    {
-        {iot_timer_client_one_callback,   IOT_TIMER_CLIENT_ONE_CB_INTERVAL},
-        {iot_timer_client_two_callback,   IOT_TIMER_CLIENT_TWO_CB_INTERVAL},
-        {iot_timer_client_three_callback, IOT_TIMER_CLIENT_THREE_CB_INTERVAL},
-        {iot_timer_client_four_callback,  IOT_TIMER_CLIENT_FOUR_CB_INTERVAL},
-    };
-
-    //The list of IoT Timer clients is declared as a constant.
-    static const iot_timer_clients_list_t iot_timer_clients =
-    {
-        (sizeof(list_of_clients) / sizeof(iot_timer_client_t)),
-        &(list_of_clients[0]),
-    };
-
-    //Passing the list of clients to the IoT Timer module.
-    err_code = iot_timer_client_list_set(&iot_timer_clients);
-    APP_ERROR_CHECK(err_code);
-    
-    
+//    leds_init();
+//    low_freq_clock_start();
+//    timers_init();
+//
+//    static const iot_timer_client_t list_of_clients[] =
+//    {
+//        {iot_timer_client_one_callback,   IOT_TIMER_CLIENT_ONE_CB_INTERVAL},
+//        {iot_timer_client_two_callback,   IOT_TIMER_CLIENT_TWO_CB_INTERVAL},
+//        {iot_timer_client_three_callback, IOT_TIMER_CLIENT_THREE_CB_INTERVAL},
+//        {iot_timer_client_four_callback,  IOT_TIMER_CLIENT_FOUR_CB_INTERVAL},
+//    };
+//
+//    //The list of IoT Timer clients is declared as a constant.
+//    static const iot_timer_clients_list_t iot_timer_clients =
+//    {
+//        (sizeof(list_of_clients) / sizeof(iot_timer_client_t)),
+//        &(list_of_clients[0]),
+//    };
+//
+//    //Passing the list of clients to the IoT Timer module.
+//    err_code = iot_timer_client_list_set(&iot_timer_clients);
+//    APP_ERROR_CHECK(err_code);
+//    
+//    
     init_cryptolib();
 
     //Starting the app timer instance that is the tick source for the IoT Timer.

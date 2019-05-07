@@ -35,11 +35,16 @@
 	void 	pull_up_disable			(void);
 	void 	owi_release					(void);
 	void 	owi_pull_low				(void);
+        void  owi_pull_high(void);
 							 
 uint8_t owi_readbyte 				(void);
 uint8_t owi_reset						(void);
  void 	owi_write_1					(void);
  void 	owi_write_0					(void);
+ 
+ void owi_set_output();
+ void owi_config_input();
+ uint8_t owi_readpin();
 
 #endif	/* OWI_H */
 

@@ -53,6 +53,7 @@ void swi_enable(void)
 //    port_get_config_defaults(&pin_conf);
 //    pin_conf.direction  = PORT_PIN_DIR_OUTPUT;
 //    port_pin_set_config(device_pin, &pin_conf);
+    owi_set_output();
 }
 
 void swi_disable(void)
@@ -68,11 +69,11 @@ void swi_set_signal_pin(uint8_t is_high)
 {
     if (is_high)
     {
-        owi_write_1();//port_pin_set_output_level(device_pin, true);
+       owi_pull_high();// owi_write_1();//port_pin_set_output_level(device_pin, true);
     }
     else
     {
-        owi_write_0();//port_pin_set_output_level(device_pin, false);
+         owi_pull_low();//owi_write_0();//port_pin_set_output_level(device_pin, false);
     }
 }
 
@@ -134,7 +135,7 @@ ATCA_STATUS swi_receive_bytes(uint8_t count, uint8_t *buffer)
     uint8_t pulse_count;
     uint16_t timeout_count;
     //struct port_config pin_conf;
-
+    owi_config_input();
 
     //port_get_config_defaults(&pin_conf);
     //port_pin_set_config(device_pin, &pin_conf);
@@ -149,13 +150,13 @@ ATCA_STATUS swi_receive_bytes(uint8_t count, uint8_t *buffer)
             pulse_count = 0;
 
 
-            timeout_count = START_PULSE_TIME_OUT;
+            timeout_count = 65500;//START_PULSE_TIME_OUT;
             //! Detect start bit.
 
             while (--timeout_count > 0)
             {
                 //! Wait for falling edge.
-                if (port_pin_get_input_level(device_pin) == 0)
+                if(owi_readpin() == 0)//if (port_pin_get_input_level(device_pin) == 0)
                 {
 
                     break;
@@ -164,7 +165,8 @@ ATCA_STATUS swi_receive_bytes(uint8_t count, uint8_t *buffer)
             if (timeout_count == 0)
             {
                 status = ATCA_RX_TIMEOUT;
-                break;
+
++break;
             }
 
             timeout_count = START_PULSE_TIME_OUT;
@@ -172,7 +174,7 @@ ATCA_STATUS swi_receive_bytes(uint8_t count, uint8_t *buffer)
             do
             {
                 //! Wait for rising edge.
-                if (port_pin_get_input_level(device_pin) != 0)
+                if (owi_readpin() != 0)
                 {
                     pulse_count = 1;
 
@@ -194,7 +196,7 @@ ATCA_STATUS swi_receive_bytes(uint8_t count, uint8_t *buffer)
             //! Detect possible edge indicating zero bit.
             do
             {
-                if (port_pin_get_input_level(device_pin) == 0)
+                if (owi_readpin() == 0)
                 {
                     pulse_count = 2;
                     break;
@@ -211,7 +213,7 @@ ATCA_STATUS swi_receive_bytes(uint8_t count, uint8_t *buffer)
 
                 do
                 {
-                    if (port_pin_get_input_level(device_pin) != 0)
+                    if (owi_readpin() != 0)
                     {
                         break;
                     }

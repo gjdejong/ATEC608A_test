@@ -49,6 +49,11 @@ void owi_release(void)
 }	
 
 
+void owi_set_output()
+{
+    nrf_gpio_cfg_output(OWI_PIN);
+}
+
 /******************************************************************************************
 * @brief	Inline function to pull the one-wire-interface bus low by declaring the pin as 
 *					an output and setting the output to low.
@@ -58,6 +63,14 @@ void owi_pull_low(void)
 	nrf_gpio_cfg_output(OWI_PIN);
 	nrf_gpio_pin_write(OWI_PIN, 0);
 }	
+
+
+void owi_pull_high(void)
+{
+	nrf_gpio_cfg_output(OWI_PIN);
+	nrf_gpio_pin_write(OWI_PIN, 1);
+}	
+
 
 
 /******************************************************************************************
@@ -71,20 +84,30 @@ uint8_t owi_readbyte (void)
 	for(i = 0; i < 8; i++)
 	{	
 		owi_pull_low();
-		nrf_delay_us(READ_TLOW);
-		owi_release();
-		nrf_delay_us(READ_TDELAY);
+//		nrf_delay_us(READ_TLOW);
+//		owi_release();
+//		nrf_delay_us(READ_TDELAY);
 		
 		if(nrf_gpio_pin_read(OWI_PIN) == 1)
 		{
 			data |= (1 << i);
 		}
 
-		nrf_delay_us(READ_TSAMPLE);
+//		nrf_delay_us(READ_TSAMPLE);
 	}
 	return data;
 } /* DS_ReadByte */
 
+
+void owi_config_input()
+{
+       nrf_gpio_cfg_input(OWI_PIN, NRF_GPIO_PIN_PULLUP);
+}
+
+uint8_t owi_readpin()
+{
+    return nrf_gpio_pin_read(OWI_PIN);
+}
 
 
 /******************************************************************************************
@@ -92,10 +115,10 @@ uint8_t owi_readbyte (void)
 */
 void owi_write_1(void)
 {	
-	owi_pull_low();
-	nrf_delay_us(10);
-	owi_release();
-	nrf_delay_us(80);
+	owi_pull_high();
+//	nrf_delay_us(10);
+//	owi_release();
+//	nrf_delay_us(80);
 } /* DS_Write_1 */
 
 /******************************************************************************************
@@ -104,9 +127,9 @@ void owi_write_1(void)
 void owi_write_0(void)
 {
 	owi_pull_low();
-	nrf_delay_us(WRITE0_TLOW);
-	owi_release();
-	nrf_delay_us(WRITE0_THIGH);
+//	nrf_delay_us(WRITE0_TLOW);
+//	owi_release();
+//	nrf_delay_us(WRITE0_THIGH);
 } /* DS_Write_0 */
 
 

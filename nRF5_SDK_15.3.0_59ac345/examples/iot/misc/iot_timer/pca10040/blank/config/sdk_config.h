@@ -52,7 +52,7 @@
 #endif
 
 #ifndef OWI_PIN
-#define OWI_PIN 22
+#define OWI_PIN 4
 #endif
 
 // <h> nRF_Drivers 
