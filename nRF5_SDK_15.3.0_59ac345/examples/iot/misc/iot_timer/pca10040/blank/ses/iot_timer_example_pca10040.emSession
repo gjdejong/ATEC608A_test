@@ -2,7 +2,20 @@
 <session>
  <Bookmarks/>
  <Breakpoints groups="Breakpoints" active_group="Breakpoints">
-  <Exceptions set="MemManage;UsageFault_Coprocessor;UsageFault_CheckingError;UsageFault_StateError;BusFault;ExceptionEntryReturnFault;HardFault"/>
+  <BreakpointListItem trigger="" line="100" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="../../../cryptoauthlib/lib/basic/atca_basic_read.c" useHWbreakpoint="false"/>
+  <BreakpointListItem trigger="" line="80" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="../../../cryptoauthlib/lib/basic/atca_basic_read.c" useHWbreakpoint="false"/>
+  <BreakpointListItem trigger="" line="95" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="../../../cryptoauthlib/lib/basic/atca_basic_read.c" useHWbreakpoint="false"/>
+  <BreakpointListItem trigger="" line="309" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="../../../cryptoauthlib/lib/atca_execution.c" useHWbreakpoint="false"/>
+  <BreakpointListItem trigger="" line="315" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="../../../cryptoauthlib/lib/atca_execution.c" useHWbreakpoint="false"/>
+  <BreakpointListItem trigger="" line="328" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="../../../cryptoauthlib/lib/atca_execution.c" useHWbreakpoint="false"/>
+  <BreakpointListItem trigger="" line="339" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="../../../cryptoauthlib/lib/atca_execution.c" useHWbreakpoint="false"/>
+  <BreakpointListItem trigger="" line="166" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="../../../cryptoauthlib/lib/atca_iface.c" useHWbreakpoint="false"/>
+  <BreakpointListItem trigger="" line="149" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="../../../cryptoauthlib/lib/hal/hal_swi_bitbang.c" useHWbreakpoint="false"/>
+  <BreakpointListItem trigger="" line="163" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="../../../swi_bitbang_nrf.c" useHWbreakpoint="false"/>
+  <BreakpointListItem trigger="" line="170" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="../../../swi_bitbang_nrf.c" useHWbreakpoint="false"/>
+  <BreakpointListItem trigger="" line="180" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="../../../swi_bitbang_nrf.c" useHWbreakpoint="false"/>
+  <BreakpointListItem trigger="" line="190" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="../../../swi_bitbang_nrf.c" useHWbreakpoint="false"/>
+  <Exceptions set="Reset;MemManage;UsageFault_Coprocessor;UsageFault_CheckingError;UsageFault_StateError;BusFault;ExceptionEntryReturnFault;HardFault"/>
  </Breakpoints>
  <ExecutionProfileWindow/>
  <FrameBufferWindow>
@@ -25,6 +38,9 @@
   <ProjectSessionItem path="iot_timer_example_pca10040;iot_timer_example_pca10040"/>
   <ProjectSessionItem path="iot_timer_example_pca10040;iot_timer_example_pca10040;Application"/>
   <ProjectSessionItem path="iot_timer_example_pca10040;iot_timer_example_pca10040;Cryptolib"/>
+  <ProjectSessionItem path="iot_timer_example_pca10040;iot_timer_example_pca10040;None"/>
+  <ProjectSessionItem path="iot_timer_example_pca10040;iot_timer_example_pca10040;nRF_Drivers"/>
+  <ProjectSessionItem path="iot_timer_example_pca10040;iot_timer_example_pca10040;nRF_Libraries"/>
  </Project>
  <Register1>
   <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/msp;CPU/psp;CPU/cfbp" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="iot_timer_example_pca10040" decimalNodes="" octalNodes="" unsignedNodes=""/>
@@ -57,20 +73,32 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="31" y="107" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../main.c" selected="0" top="60" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="803" useTextEdit="1" useBinaryEdit="0" left="0" path="../config/sdk_config.h" selected="0" top="772" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="6" y="89" useTextEdit="1" useBinaryEdit="0" left="0" path="iot_timer_example_pca10040.emProject" selected="0" top="61" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/cryptoauthlib.h" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="36" y="183" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/basic/atca_basic.h" selected="0" top="155" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="34" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/basic/atca_helpers.h" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="42" y="97" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/basic/atca_basic_read.c" selected="0" top="66" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="12" y="326" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/basic/atca_basic.c" selected="0" top="298" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="306" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/atca_command.c" selected="0" top="251" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="318" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/atca_execution.c" selected="1" top="281" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="163" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/atca_iface.c" selected="0" top="108" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="109" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/hal/atca_hal.h" selected="0" top="109" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="74" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/hal/atca_hal.c" selected="0" top="39" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="263" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/hal/hal_swi_bitbang.c" selected="0" top="223" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="242" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../main.c" selected="0" top="219" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="54" useTextEdit="1" useBinaryEdit="0" left="0" path="../config/sdk_config.h" selected="0" top="12" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="17" useTextEdit="1" useBinaryEdit="0" left="0" path="iot_timer_example_pca10040.emProject" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="38" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/cryptoauthlib.h" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="31" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/basic/atca_basic.h" selected="0" top="3" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="65" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/basic/atca_basic_read.c" selected="1" top="63" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="326" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/basic/atca_basic.c" selected="0" top="318" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="306" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/atca_execution.c" selected="0" top="274" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="157" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/atca_iface.c" selected="0" top="134" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="51" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/hal/atca_hal.c" selected="0" top="39" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="224" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/hal/hal_swi_bitbang.c" selected="0" top="201" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="169" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../swi_bitbang_nrf.c" selected="0" top="146" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="60" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../OWI.c" selected="0" top="44" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="54" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../swi_bitbang.h" selected="0" top="41" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/hal/hal_swi_bitbang.h" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="133" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/atca_iface.h" selected="0" top="110" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="637" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/atca_command.c" selected="0" top="614" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="99" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../../modules/nrfx/hal/nrf_gpio.h" selected="0" top="74" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="46" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../OWI.h" selected="0" top="6" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="45" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/atca_devtypes.h" selected="0" top="8" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="132" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/atca_device.c" selected="0" top="100" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="139" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../../modules/nrfx/soc/nrfx_coredep.h" selected="0" top="131" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="103" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../../modules/nrfx/mdk/ses_startup_nrf_common.s" selected="0" top="80" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="51" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/lib/atca_cfgs.c" selected="0" top="36" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="882" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../cryptoauthlib/test/cmd-processor.c" selected="0" top="859" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="63" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../../components/libraries/delay/nrf_delay.h" selected="0" top="31" codecName="Default"/>
  </Files>
- <ARMCrossStudioWindow activeProject="iot_timer_example_pca10040" fileDialogDefaultFilter="" autoConnectTarget="J-Link" buildConfiguration="Release" debugSearchFileMap="" fileDialogInitialDirectory="C:/localrep/ATEC608A_test/nRF5_SDK_15.3.0_59ac345/examples/iot/misc/iot_timer/cryptoauthlib/lib/hal" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <ARMCrossStudioWindow activeProject="iot_timer_example_pca10040" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Release" debugSearchFileMap="" fileDialogInitialDirectory="C:/localrep/ATEC608A_test/nRF5_SDK_15.3.0_59ac345/examples/iot/misc/iot_timer/cryptoauthlib/lib" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>

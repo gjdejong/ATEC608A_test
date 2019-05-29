@@ -69,6 +69,7 @@
 #include "nrf_log_ctrl.h"
 #include "nrf_log_default_backends.h"
 
+#include "OWI.h"
 #include "cryptoauthlib.h"
 
 #define MAX_LENGTH_FILENAME                 80
@@ -116,7 +117,10 @@ static void init_cryptolib()
     {
        NRF_LOG_INFO( "read serial nr failed");
     }
-   NRF_LOG_INFO("serial %d", sn);
+    else 
+    {      
+        NRF_LOG_INFO("serial %d", sn);
+    }
 }
 
 
@@ -266,6 +270,10 @@ int main(void)
 //    
 //    
     init_cryptolib();
+  //  owi_set_output();
+//    owi_write_1();
+//    
+//    owi_config_input();
 
     //Starting the app timer instance that is the tick source for the IoT Timer.
 //    err_code = app_timer_start(m_iot_timer_tick_src_id,

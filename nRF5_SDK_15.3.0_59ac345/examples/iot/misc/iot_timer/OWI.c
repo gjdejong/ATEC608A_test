@@ -58,14 +58,14 @@ void owi_set_output()
 * @brief	Inline function to pull the one-wire-interface bus low by declaring the pin as 
 *					an output and setting the output to low.
 ******************************************************************************************/
-void owi_pull_low(void)
+inline void owi_pull_low(void)
 {
 	nrf_gpio_cfg_output(OWI_PIN);
 	nrf_gpio_pin_write(OWI_PIN, 0);
 }	
 
 
-void owi_pull_high(void)
+inline void owi_pull_high(void)
 {
 	nrf_gpio_cfg_output(OWI_PIN);
 	nrf_gpio_pin_write(OWI_PIN, 1);
@@ -113,7 +113,7 @@ uint8_t owi_readpin()
 /******************************************************************************************
  * \brief	Function to send a 1 to the DS2401*****************************************************************************************
 */
-void owi_write_1(void)
+inline void owi_write_1(void)
 {	
 	owi_pull_high();
 //	nrf_delay_us(10);
@@ -124,7 +124,7 @@ void owi_write_1(void)
 /******************************************************************************************
  * \brief    Function to send a 0 to the DS2401
 ******************************************************************************************/
-void owi_write_0(void)
+inline void owi_write_0(void)
 {
 	owi_pull_low();
 //	nrf_delay_us(WRITE0_TLOW);

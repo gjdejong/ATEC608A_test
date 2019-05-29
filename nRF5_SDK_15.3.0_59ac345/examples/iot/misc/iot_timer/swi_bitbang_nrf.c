@@ -118,6 +118,7 @@ void swi_send_bytes(uint8_t count, uint8_t *buffer)
             }
         }
     }
+    int t=0;
  //   cpu_irq_enable();
 }
 
@@ -166,7 +167,7 @@ ATCA_STATUS swi_receive_bytes(uint8_t count, uint8_t *buffer)
             {
                 status = ATCA_RX_TIMEOUT;
 
-+break;
+                break;
             }
 
             timeout_count = START_PULSE_TIME_OUT;
